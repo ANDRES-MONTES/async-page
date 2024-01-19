@@ -1,6 +1,6 @@
 const container = document.querySelector('.container-info')
 
-const url = 'https://youtube-v31.p.rapidapi.com/search?channelId=UCT9zcQNlyht7fRlcjmflRSA&part=snippet%2Cid&order=date&maxResults=9';
+const url = 'https://youtube-v31.p.rapidapi.com/search?channelId=UCT9zcQNlyht7fRlcjmflRSA&part=snippet%2Cid&order=date&maxResults=12';
 const options = {
 	method: 'GET',
 	headers: {
@@ -22,9 +22,11 @@ async function have_info () {
         const prove = `
         ${info.items.map(item =>
             `
-            <div>
-            <iframe width="340" height="220" src="https://www.youtube.com/watch?v=${item.id.videoId}" frameborder="0" allowfullscreen></iframe>
-            <h3>${item.snippet.title}</h3>
+            <div class="info-video">
+                <a href="https://www.youtube.com/watch?v=${item.id.videoId}" target="_blank">
+                    <img src="${item.snippet.thumbnails.high.url}" alt="">
+                    <h3>${item.snippet.title}</h3>
+                 </a>
             </div>
             `
             ).join('')}
