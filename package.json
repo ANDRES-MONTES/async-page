@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "gh-page -d src"
+    "deploy": "gh-pages -d src"
   },
   "author": "andresmontes730@gmail.com",
   "license": "ISC",
